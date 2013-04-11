@@ -38,7 +38,7 @@ sub main {
                 max_request_time => 20
             },
             [
-                map { HTTP::Request->new(GET => $_) } @github_urls[0..min(20-1, scalar @github_urls)]
+                map { HTTP::Request->new(GET => $_) } @github_urls[0..min(20-1, scalar @github_urls-1)]
             ],
             sub {
                 my ($req, $res) = @_;
