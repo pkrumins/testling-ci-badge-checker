@@ -38,7 +38,7 @@ sub main {
                 max_request_time => 20
             },
             [
-                map { HTTP::Request->new(GET => $_) } @github_urls[0..min(10, scalar @github_urls)]
+                map { HTTP::Request->new(GET => $_) } @github_urls[0..min(20-1, scalar @github_urls)]
             ],
             sub {
                 my ($req, $res) = @_;
@@ -51,7 +51,7 @@ sub main {
                 $processed_urls++;
             }
         );
-        splice(@github_urls, 0, 10);
+        splice(@github_urls, 0, 20);
         print "Processed: $processed_urls/$total_urls\n";
     }
 
