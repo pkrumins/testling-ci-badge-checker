@@ -31,7 +31,6 @@ sub async_retry {
         my $request = $id_map{$id};
 
         unless ($response->is_success) {
-            print $response->status_line, "\n";
             unless (defined $retry_count->{$request}) {
                 $retry_count->{$request} = 0
             }

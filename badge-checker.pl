@@ -52,7 +52,7 @@ sub main {
             }
         );
         splice(@github_urls, 0, 10);
-        print "Processed: $processed_urls/@{[scalar @github_urls]}\n";
+        print "Processed: $processed_urls/$total_urls\n";
     }
 
     print "Stats: $have_badge repos have the testling-ci badge\n";
